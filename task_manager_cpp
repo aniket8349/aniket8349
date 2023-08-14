@@ -1,0 +1,77 @@
+#include <iostream>
+#include <vector>
+#include <ctime>
+#include <iomanip>
+
+// Task structure
+struct Task {
+    std::string description;
+    std::tm dueDate;
+    bool isComplete;
+
+    Task(const std::string& desc, const std::tm& date)
+        : description(desc), dueDate(date), isComplete(false) {}
+};
+
+// Function to display task details
+void displayTask(const Task& task) {
+    std::cout << "Description: " << task.description << std::endl;
+    std::cout << "Due Date: " << std::put_time(&task.dueDate, "%Y-%m-%d") << std::endl;
+    std::cout << "Completion Status: " << (task.isComplete ? "Complete" : "Incomplete") << std::endl;
+}
+
+int main() {
+    std::vector<Task> tasks;
+
+    while (true) {
+        std::cout << "Menu:\n";
+        std::cout << "1. Add Task\n";
+        std::cout << "2. View Tasks\n";
+        std::cout << "3. Mark as Complete\n";
+        std::cout << "4. Remove Task\n";
+        std::cout << "5. Exit\n";
+        int choice;
+        std::cin >> choice;
+
+        if (choice == 1) {
+            std::string desc;
+            std::cout << "Enter task description: ";
+            std::cin.ignore(); // Ignore newline left in buffer
+            std::getline(std::cin, desc);
+
+            std::tm dueDate = {};
+            std::cout << "Enter due date (YYYY MM DD): ";
+            std::cin >> std::get_time(&dueDate, "%Y %m %d");
+
+            tasks.push_back(Task(desc, dueDate));
+            std::cout << "Task added!\n";
+        }
+        else if (choice == 2) {
+            if (tasks.empty()) {
+                std::cout << "No tasks to display.\n";
+            }
+            else {
+                std::cout << "Tasks:\n";
+                for (const Task& task : tasks) {
+                    displayTask(task);
+                    std::cout << "---------------\n";
+                }
+            }
+        }
+        else if (choice == 3) {
+            // Code to mark task as complete
+        }
+        else if (choice == 4) {
+            // Code to remove task
+        }
+        else if (choice == 5) {
+            std::cout << "Exiting...\n";
+            break;
+        }
+        else {
+            std::cout << "Invalid choice. Please enter a valid option.\n";
+        }
+    }
+
+    return 0;
+}
