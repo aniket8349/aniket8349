@@ -26,7 +26,7 @@ std::cout and std::cin:
 These are standard output and input streams, respectively, provided by the C++ Standard Library. They are used to display messages to the user and read their input from the console.
 
 std::vector:
-The std::vector container is used to store the list of tasks in the TaskManager class. It allows for dynamic storage and manipulation of tasks.
+The std::vector container is used to store the list of tasks in the TaskManager class. It allows for dynamic storage and manipulation of tasks
 
 struct Task:
 A struct is used to define the structure of a task, including its title, description, and completion status. It's a simple way to group related data together.
