@@ -29,4 +29,4 @@ std::vector:
 The std::vector container is used to store the list of tasks in the TaskManager class. It allows for dynamic storage and manipulation of tasks
 
 struct Task:
-A struct is used to define the structure of a task, including its title, description, and completion status. It's a simple way to group related data together.
+A struct is used to define the structure of a task, including its title, description, and completion status. It's a simple way to group related data together
