@@ -69,7 +69,7 @@ int main() {
             break;
         }
         else {
-            std::cout << "Invalid choice. Please enter a valid option.\n";
+            std::cout << "Invalid choice. Please enter  valid option.\n";
         }
     }
 
